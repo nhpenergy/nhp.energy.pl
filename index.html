@@ -90,10 +90,30 @@
     </ul>
   </section>
 
-  <section id="gallery" class="section gallery">
-    <h2 id="gallery-title">Galeria</h2>
-    <img src="https://via.placeholder.com/300" alt="Zdjęcie 1" />
-    <img src="https://via.placeholder.com/300" alt="Zdjęcie 2" />
+  <section id="gallery" class="gallery-section" style="padding: 4rem 2rem; background-color: #111;">
+  <h2 style="text-align: center; color: #fff; font-size: 2rem; margin-bottom: 2rem;">Galeria</h2>
+  <div class="gallery-grid" style="
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  ">
+    <div class="gallery-item" style="overflow: hidden; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: transform 0.3s;">
+      <img src="https://via.placeholder.com/300" alt="Zdjęcie 1" style="width: 100%; height: auto; display: block; transition: transform 0.3s;">
+    </div>
+    <div class="gallery-item" style="overflow: hidden; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: transform 0.3s;">
+      <img src="https://via.placeholder.com/300" alt="Zdjęcie 2" style="width: 100%; height: auto; display: block; transition: transform 0.3s;">
+    </div>
+    <!-- Додай ще фото за потреби -->
+  </div>
+</section>
+
+<style>
+  .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+</style>
   </section>
 
   <section id="contact" class="section">
