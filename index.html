@@ -1,90 +1,137 @@
-<!DOCTYPE html>
-<html lang="pl">
+<!DOCTYPE html><html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NHP ENERGY</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: white;
-      color: #222;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #f0f0f0;
     }
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    header, footer {
+      background-color: #000;
       padding: 1rem;
-      background: white;
-      border-bottom: 2px solid #eee;
+      text-align: center;
     }
-    header img {
-      height: 60px;
-      margin-right: 1rem;
-    }
-    header h1 {
-      font-size: 2rem;
-      color: #007f3f;
-      margin: 0;
-    }
-    .hero {
-      background: url('hero.jpg') center/cover no-repeat;
-      height: 50vh;
+    nav {
       display: flex;
-      align-items: center;
       justify-content: center;
+      background-color: #222;
+      padding: 0.5rem;
     }
-    .hero h2 {
-      background: rgba(255,255,255,0.8);
-      color: #007f3f;
-      padding: 1rem 2rem;
-      border-radius: 1rem;
-      font-size: 2rem;
+    nav a {
+      color: #f0f0f0;
+      margin: 0 1rem;
+      text-decoration: none;
     }
-    .content {
+    .lang-switch {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+    .section {
       padding: 2rem;
-      text-align: center;
+      max-width: 1000px;
+      margin: 0 auto;
     }
-    .content h3 {
-      color: #007f3f;
-      margin-bottom: 1rem;
-    }
-    .content p {
-      margin: 0.3rem 0;
-      font-size: 1.1rem;
-    }
-    footer {
-      background: #004d25;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+    .gallery img {
+      width: 100%;
+      max-width: 300px;
+      margin: 0.5rem;
     }
   </style>
 </head>
 <body>
+  <div class="lang-switch">
+    <button onclick="switchLang('pl')">PL</button>
+    <button onclick="switchLang('ua')">UA</button>
+  </div>  <header>
+    <h1 id="site-title">NHP ENERGY</h1>
+    <p id="subtitle">Nowoczesne rozwiązania energetyczne</p>
+  </header>  <nav>
+    <a href="#home" id="nav-home">Główna</a>
+    <a href="#about" id="nav-about">O nas</a>
+    <a href="#services" id="nav-services">Usługi</a>
+    <a href="#gallery" id="nav-gallery">Galeria</a>
+    <a href="#contact" id="nav-contact">Kontakt</a>
+  </nav>  <section id="home" class="section">
+    <h2 id="home-title">Witamy w NHP ENERGY</h2>
+    <p id="home-text">Profesjonalne instalacje fotowoltaiczne dla domu i firmy.</p>
+  </section>  <section id="about" class="section">
+    <h2 id="about-title">O nas</h2>
+    <p id="about-text">Specjalizujemy się w nowoczesnych rozwiązaniach OZE.</p>
+  </section>  <section id="services" class="section">
+    <h2 id="services-title">Usługi</h2>
+    <ul id="services-list">
+      <li>Projektowanie instalacji</li>
+      <li>Montaż paneli</li>
+      <li>Serwis i wsparcie</li>
+    </ul>
+  </section>  <section id="gallery" class="section gallery">
+    <h2 id="gallery-title">Galeria</h2>
+    <img src="https://via.placeholder.com/300" alt="Zdjęcie 1" />
+    <img src="https://via.placeholder.com/300" alt="Zdjęcie 2" />
+  </section>  <section id="contact" class="section">
+    <h2 id="contact-title">Kontakt</h2>
+    <p id="contact-email">Email: nhp.energy.sun@gmail.com</p>
+    <p id="contact-phone">Telefon: +48 574 717 345</p>
+    <p id="contact-address">Adres: Poznań</p>
+  </section>  <footer>
+    <p>&copy; 2025 NHP ENERGY</p>
+  </footer>  <script>
+    const content = {
+      pl: {
+        subtitle: "Nowoczesne rozwiązania energetyczne",
+        nav: ["Główna", "O nas", "Usługi", "Galeria", "Kontakt"],
+        home: ["Witamy w NHP ENERGY", "Profesjonalne instalacje fotowoltaiczne dla domu i firmy."],
+        about: ["O nas", "Specjalizujemy się w nowoczesnych rozwiązaniach OZE."],
+        services: ["Usługi", ["Projektowanie instalacji", "Montaż paneli", "Serwis i wsparcie"]],
+        gallery: "Galeria",
+        contact: ["Kontakt", "Email: nhp.energy.sun@gmail.com", "Telefon: +48 574 717 345", "Adres: Poznań"]
+      },
+      ua: {
+        subtitle: "Сучасні енергетичні рішення",
+        nav: ["Головна", "Про нас", "Послуги", "Галерея", "Контакти"],
+        home: ["Ласкаво просимо до NHP ENERGY", "Професійні сонячні установки для дому та бізнесу."],
+        about: ["Про нас", "Ми спеціалізуємося на сучасних рішеннях ВДЕ."],
+        services: ["Послуги", ["Проєктування систем", "Монтаж панелей", "Сервіс і підтримка"]],
+        gallery: "Галерея",
+        contact: ["Контакти", "Email: nhp.energy.sun@gmail.com", "Телефон: +48 574 717 345", "Адреса: Позnań"]
+      }
+    };
 
-  <header>
-    <img src="logo.png" alt="Logo" />
-    <h1>NHP ENERGY</h1>
-  </header>
+    function switchLang(lang) {
+      document.getElementById("subtitle").innerText = content[lang].subtitle;
+      document.getElementById("nav-home").innerText = content[lang].nav[0];
+      document.getElementById("nav-about").innerText = content[lang].nav[1];
+      document.getElementById("nav-services").innerText = content[lang].nav[2];
+      document.getElementById("nav-gallery").innerText = content[lang].nav[3];
+      document.getElementById("nav-contact").innerText = content[lang].nav[4];
 
-  <section class="hero">
-    <h2>Fotowoltaika dla każdego</h2>
-  </section>
+      document.getElementById("home-title").innerText = content[lang].home[0];
+      document.getElementById("home-text").innerText = content[lang].home[1];
 
-  <section class="content">
-    <h3>Kontakt</h3>
-    <p>📞 +48 574 717 345</p>
-    <p>📧 nhp.energy.sun@gmail.com</p>
-    <p>📍 Poznań</p>
-    <p>🧾 NIP: 7831924093</p>
-  </section>
+      document.getElementById("about-title").innerText = content[lang].about[0];
+      document.getElementById("about-text").innerText = content[lang].about[1];
 
-  <footer>
-    &copy; 2025 NHP ENERGY. Wszystkie prawa zastrzeżone.
-  </footer>
+      document.getElementById("services-title").innerText = content[lang].services[0];
+      const list = content[lang].services[1];
+      const servicesList = document.getElementById("services-list");
+      servicesList.innerHTML = "";
+      list.forEach(item => {{
+        const li = document.createElement("li");
+        li.innerText = item;
+        servicesList.appendChild(li);
+      }});
 
-</body>
+      document.getElementById("gallery-title").innerText = content[lang].gallery;
+
+      document.getElementById("contact-title").innerText = content[lang].contact[0];
+      document.getElementById("contact-email").innerText = content[lang].contact[1];
+      document.getElementById("contact-phone").innerText = content[lang].contact[2];
+      document.getElementById("contact-address").innerText = content[lang].contact[3];
+    }
+  </script></body>
 </html>
